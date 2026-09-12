@@ -1235,41 +1235,61 @@ body.cursor-hover #cursor-ring{width:50px;height:50px;border-color:rgba(245,158,
   padding: 4px 12px;
 }
 
-.symposium-header-banner .presenter-text {
+.symposium-header-banner .presenter-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 8px;
   font-family: 'Outfit', 'Inter', sans-serif;
-  font-size: clamp(0.72rem, 1.6vw, 0.86rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
   text-align: center;
-  margin: 6px 0 0 0;
-  line-height: 1.6;
   padding: 0 12px;
 }
 
-.symposium-header-banner .presenter-text .with-text,
-.symposium-header-banner .presenter-text .presents-text {
-  color: var(--g-bright);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  padding: 0 4px;
+.symposium-header-banner .presenter-block .dept-title {
+  font-size: clamp(0.72rem, 1.8vw, 0.88rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.92);
+  text-transform: uppercase;
 }
 
-.symposium-header-banner .presenter-text .highlight-association {
-  color: #ffffff;
+.symposium-header-banner .presenter-block .ampersand {
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
   font-weight: 800;
+  color: var(--g-bright);
+  line-height: 1.2;
 }
 
-.symposium-header-banner .presenter-text .artiwiz-title {
+.symposium-header-banner .presenter-block .assoc-title {
+  font-size: clamp(0.78rem, 1.9vw, 0.92rem);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.symposium-header-banner .presenter-block .presents-label {
+  font-size: clamp(0.7rem, 1.5vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--g-bright);
+  font-style: italic;
+  text-transform: lowercase;
+  margin: 2px 0;
+}
+
+.symposium-header-banner .presenter-block .event-title {
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   background: var(--grad-title);
   background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 900;
-  letter-spacing: 0.16em;
 }
 
 .footer-college-wrap {
@@ -1285,6 +1305,8 @@ body.cursor-hover #cursor-ring{width:50px;height:50px;border-color:rgba(245,158,
   .college-accreditation-line{font-size:0.72rem}
   .college-affiliation-line{font-size:0.68rem}
   .symposium-header-banner .banner-text{font-size:0.7rem;letter-spacing:0.12em}
-  .symposium-header-banner .presenter-text{font-size:0.68rem;letter-spacing:0.08em}
+  .symposium-header-banner .presenter-block .dept-title{font-size:0.68rem;letter-spacing:0.08em}
+  .symposium-header-banner .presenter-block .assoc-title{font-size:0.72rem;letter-spacing:0.1em}
+  .symposium-header-banner .presenter-block .event-title{font-size:0.9rem;letter-spacing:0.14em}
   .symposium-header-banner .banner-line{width:80px}
 }
