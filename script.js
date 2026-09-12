@@ -10,19 +10,20 @@
    CONFIG
 ═══════════════════════════════════════════ */
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfFi8j0-6dt9lEoOHJ0X4zBSdIl6hD9LqXfQBrwCgBvUy_gJQ/viewform";
+const UNSTOP_ONLINE_URL = "https://unstop.com/competitions/arvexis-egs-pillay-engineering-college-1750514?lb=Sklx8hkf&utm_medium=Share&utm_source=artiwegs7632&utm_campaign=Competitions";
 
 const ONLINE_EVENTS = [
   {
     id: "arvexis", name: "ARVEXIS", icon: "🔍",
     tag: "Case Study Presentation", tagType: "online",
     description: "Showcase your analytical prowess by presenting a compelling case study on how AI can solve a real-world sustainability challenge. Present data-driven insights and innovative AI-powered solutions.",
-    formUrl: GOOGLE_FORM_URL,
+    formUrl: UNSTOP_ONLINE_URL,
   },
   {
     id: "pre-symposium", name: "Pre-Symposium Event", icon: "🎓",
     tag: "Webinar", tagType: "online",
     description: "Kickstart ArtiWhiz'26 with an inspiring online webinar featuring industry experts sharing cutting-edge insights on AI for Sustainability — open to all registered participants.",
-    formUrl: GOOGLE_FORM_URL,
+    formUrl: UNSTOP_ONLINE_URL,
   },
 ];
 
@@ -787,12 +788,37 @@ function renderEvents() {
    REGISTER BUTTONS
 ═══════════════════════════════════════════ */
 function initRegisterBtns() {
-  ["#nav-register-btn","#hero-register-btn","#mobile-register-btn"].forEach(sel => {
-    const el = $(sel);
-    if (!el) return;
-    el.href = GOOGLE_FORM_URL;
-    el.target = "_blank";
-    el.rel = "noopener noreferrer";
+  const modal = $("#reg-modal");
+  const overlay = $("#reg-modal-overlay");
+  const closeBtn = $("#reg-modal-close");
+
+  const openModal = (e) => {
+    if (e) e.preventDefault();
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => modal.classList.add("is-open"));
+  };
+
+  const closeModal = () => {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+    setTimeout(() => { modal.hidden = true; }, 300);
+  };
+
+  ["#nav-register-btn","#hero-register-btn","#mobile-register-btn",".footer-reg-link"].forEach(sel => {
+    $$(sel).forEach(el => {
+      el.addEventListener("click", openModal);
+    });
+  });
+
+  overlay?.addEventListener("click", closeModal);
+  closeBtn?.addEventListener("click", closeModal);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && modal && !modal.hidden) closeModal(); });
+
+  $$(".modal-opt-card").forEach(card => {
+    card.addEventListener("click", closeModal);
   });
 }
 

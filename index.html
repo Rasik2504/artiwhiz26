@@ -305,7 +305,12 @@
 
         <div class="about-stats reveal-item">
           <div class="stat-card glass-card floating" data-float-delay="0">
-            <div class="stat-icon">📅</div>
+            <div class="stat-icon">
+              <div class="calendar-badge" aria-label="October 15">
+                <span class="cal-month">OCT</span>
+                <span class="cal-day">15</span>
+              </div>
+            </div>
             <div class="stat-num">2</div>
             <div class="stat-label">Days</div>
           </div>
@@ -515,7 +520,7 @@
           <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>RR</span></div><div class="coord-avatar-ring"></div></div><h4>R. Rajeshwari</h4><p>Secretary</p></div>
           <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SD</span></div><div class="coord-avatar-ring"></div></div><h4>S. Deepika</h4><p>Vice President</p></div>
           <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>BA</span></div><div class="coord-avatar-ring"></div></div><h4>B. Anu</h4><p>Joint Secretary</p></div>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>YY</span></div><div class="coord-avatar-ring"></div></div><h4>Y. Yokitha</h4><p>Treasurer</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>VY</span></div><div class="coord-avatar-ring"></div></div><h4>V. Yokita</h4><p>Treasurer</p></div>
           <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SA</span></div><div class="coord-avatar-ring"></div></div><h4>S. Annamalai</h4><p>Co-Treasurer</p></div>
         </div>
       </div>
@@ -596,6 +601,39 @@
       </div>
     </div>
   </footer>
+
+  <!-- ─── REGISTRATION MODAL ─── -->
+  <div id="reg-modal" class="modal-backdrop" hidden>
+    <div class="modal-overlay" id="reg-modal-overlay"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="reg-modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-badge">Registration Center</span>
+        <h3>Choose Event Category</h3>
+        <p>Select the event type you wish to register for:</p>
+      </div>
+      <div class="modal-options">
+        <a href="https://unstop.com/competitions/arvexis-egs-pillay-engineering-college-1750514?lb=Sklx8hkf&utm_medium=Share&utm_source=artiwegs7632&utm_campaign=Competitions" target="_blank" rel="noopener noreferrer" class="modal-opt-card opt-online">
+          <div class="opt-icon">🌐</div>
+          <div class="opt-details">
+            <span class="opt-tag">Day 1 · 14 Oct (Online)</span>
+            <h4>Online Event (ARVEXIS)</h4>
+            <p>Register via Unstop Platform</p>
+          </div>
+          <span class="opt-arrow">→</span>
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFi8j0-6dt9lEoOHJ0X4zBSdIl6hD9LqXfQBrwCgBvUy_gJQ/viewform" target="_blank" rel="noopener noreferrer" class="modal-opt-card opt-offline">
+          <div class="opt-icon">📍</div>
+          <div class="opt-details">
+            <span class="opt-tag">Day 2 · 15 Oct (In-Person)</span>
+            <h4>Offline Events</h4>
+            <p>Technical &amp; Non-Technical Events via Google Form</p>
+          </div>
+          <span class="opt-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
