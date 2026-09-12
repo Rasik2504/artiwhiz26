@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ArtiWhiz'26 — International Student Symposium on Humanizing Technology. AI for Sustainability. 14–15 October 2026, E.G.S. Pillay Engineering College." />
+  <meta property="og:title" content="ArtiWhiz'26 | AI for Sustainability" />
+  <meta property="og:description" content="International Student Symposium — Humanizing Technology. 14–15 October 2026." />
+  <title>ArtiWhiz'26 | AI for Sustainability | E.G.S. Pillay Engineering College</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── SCROLL PROGRESS BAR ─── -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ─── PAGE LOADER ─── -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-bg"></div>
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <svg class="loader-leaf" viewBox="0 0 100 120" fill="none">
+          <path class="leaf-main" d="M50 110 C50 110 5 80 5 40 C5 8 22 2 50 2 C78 2 95 8 95 40 C95 80 50 110 50 110Z"/>
+          <path class="leaf-vein-main" d="M50 110 L50 15"/>
+          <path class="leaf-vein-l1" d="M50 80 L22 58"/>
+          <path class="leaf-vein-l2" d="M50 62 L18 44"/>
+          <path class="leaf-vein-r1" d="M50 80 L78 58"/>
+          <path class="leaf-vein-r2" d="M50 62 L82 44"/>
+          <circle class="leaf-dot" cx="50" cy="2" r="4"/>
+        </svg>
+        <div class="loader-rings">
+          <div class="loader-ring r1"></div>
+          <div class="loader-ring r2"></div>
+          <div class="loader-ring r3"></div>
+        </div>
+      </div>
+      <div class="loader-text-wrap">
+        <span class="loader-title">ArtiWhiz<em>'26</em></span>
+        <span class="loader-sub">AI for Sustainability</span>
+      </div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    </div>
+  </div>
+
+  <!-- ─── CUSTOM CURSOR ─── -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+  <div id="cursor-trail" aria-hidden="true"></div>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="ArtiWhiz'26 Home">
+        <svg class="nav-leaf" viewBox="0 0 32 38" fill="none">
+          <path d="M16 36 C16 36 1 26 1 14 C1 4 7 1 16 1 C25 1 31 4 31 14 C31 26 16 36 16 36Z" fill="url(#nlg)"/>
+          <path d="M16 36 L16 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M16 26 L7 19" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+          <path d="M16 20 L25 14" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+          <defs>
+            <linearGradient id="nlg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#22c55e"/>
+              <stop offset="100%" stop-color="#0d5c2f"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ArtiWhiz<span class="accent">'26</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#hero"           class="nav-link" data-section="hero">Home</a></li>
+        <li><a href="#about"          class="nav-link" data-section="about">About</a></li>
+        <li><a href="#online-events"  class="nav-link" data-section="online-events">Online</a></li>
+        <li><a href="#offline-events" class="nav-link" data-section="offline-events">Offline</a></li>
+        <li><a href="#prizes"         class="nav-link" data-section="prizes">Prizes</a></li>
+        <li><a href="#coordinators"   class="nav-link" data-section="coordinators">Team</a></li>
+        <li><a href="#contact"        class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <a href="#" id="nav-register-btn" class="btn btn-primary btn-glow btn-magnetic" aria-label="Register">
+        <span class="btn-inner">Register Now</span>
+        <span class="btn-glow-ring"></span>
+      </a>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <div class="mm-overlay" id="mobile-overlay"></div>
+    <nav class="mm-panel">
+      <button class="mm-close" id="mobile-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="mm-brand">ArtiWhiz<span>'26</span></div>
+      <ul class="mm-links" role="list">
+        <li><a href="#hero"           class="mm-link">🏠 Home</a></li>
+        <li><a href="#about"          class="mm-link">ℹ️ About</a></li>
+        <li><a href="#online-events"  class="mm-link">🌐 Online Events</a></li>
+        <li><a href="#offline-events" class="mm-link">📍 Offline Events</a></li>
+        <li><a href="#prizes"         class="mm-link">🏆 Prizes</a></li>
+        <li><a href="#coordinators"   class="mm-link">👥 Team</a></li>
+        <li><a href="#contact"        class="mm-link">📞 Contact</a></li>
+      </ul>
+      <a href="#" id="mobile-register-btn" class="btn btn-primary" style="width:100%;justify-content:center;">Register Now</a>
+    </nav>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero" class="hero" aria-labelledby="hero-main-title">
+    <!-- Animated mesh / canvas -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- Animated grid overlay -->
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+    <!-- Orb blobs -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <!-- Floating SVG circuit decorations -->
+    <svg class="hero-circuit hero-circuit-tl" viewBox="0 0 300 200" fill="none" aria-hidden="true">
+      <path class="circuit-path" d="M10 100 L60 100 L60 50 L120 50 L120 80 L180 80"/>
+      <circle class="circuit-node" cx="60" cy="100" r="4"/>
+      <circle class="circuit-node" cx="120" cy="50" r="4"/>
+      <circle class="circuit-node" cx="180" cy="80" r="4"/>
+      <circle class="circuit-node-pulse" cx="180" cy="80" r="8"/>
+      <path class="circuit-path" d="M10 150 L80 150 L80 120 L160 120 L160 160 L240 160"/>
+      <circle class="circuit-node" cx="80" cy="150" r="4"/>
+      <circle class="circuit-node" cx="160" cy="120" r="4"/>
+    </svg>
+
+    <svg class="hero-circuit hero-circuit-br" viewBox="0 0 300 200" fill="none" aria-hidden="true">
+      <path class="circuit-path" d="M290 50 L220 50 L220 100 L160 100 L160 70 L80 70"/>
+      <circle class="circuit-node" cx="220" cy="50" r="4"/>
+      <circle class="circuit-node" cx="160" cy="100" r="4"/>
+      <circle class="circuit-node" cx="80" cy="70" r="4"/>
+      <circle class="circuit-node-pulse" cx="80" cy="70" r="8"/>
+      <path class="circuit-path" d="M290 150 L200 150 L200 180 L100 180"/>
+      <circle class="circuit-node" cx="200" cy="150" r="4"/>
+    </svg>
+
+    <!-- Floating badges -->
+    <div class="hero-badge hero-badge-ai" aria-hidden="true">
+      <span class="badge-icon">🤖</span>
+      <span>AI Powered</span>
+    </div>
+    <div class="hero-badge hero-badge-eco" aria-hidden="true">
+      <span class="badge-icon">🌍</span>
+      <span>Sustainability</span>
+    </div>
+
+    <div class="hero-content">
+            <!-- Institutional Accreditation Banner -->
+      <div class="college-accreditation-banner reveal-item">
+        <div class="college-title-row">
+          <span class="egs-box">EGS</span>
+          <span class="pillay-box">PILLAY</span>
+          <span class="college-text">ENGINEERING COLLEGE</span>
+        </div>
+        <p class="college-accreditation-line">
+          NBA Tier I Accreditation for All Eligible Programs | NAAC Grade A++
+        </p>
+        <p class="college-affiliation-line">
+          An Autonomous Institution | Affiliated to Anna University
+        </p>
+      </div>
+
+      <!-- Symposium Header Banner (Lines above & below) -->
+      <div class="symposium-header-banner reveal-item">
+        <div class="banner-line"></div>
+        <p class="banner-text">INTERNATIONAL STUDENT SYMPOSIUM · HUMANIZING TECHNOLOGY</p>
+        <div class="banner-line"></div>
+      </div>
+
+      <h1 class="hero-title" id="hero-main-title">
+        <span class="title-text" aria-label="ArtiWhiz 2026"></span>
+        <noscript>ArtiWhiz'26</noscript>
+      </h1>
+
+      <div class="hero-subtitle-wrap">
+        <div class="subtitle-line" aria-hidden="true"></div>
+        <p class="hero-subtitle" id="hero-subtitle">
+          <svg viewBox="0 0 16 16" fill="none" class="sub-icon" aria-hidden="true">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          AI for Sustainability
+        </p>
+        <div class="subtitle-line" aria-hidden="true"></div>
+      </div>
+
+      <p class="hero-tagline" id="hero-tagline" aria-label="Innovate for a Sustainable Future">
+        <span id="typewriter-target"></span><span class="cursor-blink" aria-hidden="true">|</span>
+      </p>
+
+      <div class="hero-dates" role="group" aria-label="Event dates">
+        <div class="date-badge">
+          <div class="date-badge-icon">🖥️</div>
+          <div class="date-badge-info">
+            <strong>14 October 2026</strong>
+            <span>Day 1 · Online</span>
+          </div>
+        </div>
+        <div class="date-divider" aria-hidden="true">→</div>
+        <div class="date-badge">
+          <div class="date-badge-icon">📍</div>
+          <div class="date-badge-info">
+            <strong>15 October 2026</strong>
+            <span>Day 2 · In-Person</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown-wrap" role="timer" aria-label="Countdown to ArtiWhiz'26">
+        <p class="countdown-label">Event begins in</p>
+        <div class="countdown-grid" id="countdown">
+          <div class="cd-unit">
+            <div class="cd-box" id="cd-days"><span class="cd-num" id="days-num">00</span></div>
+            <span class="cd-lbl">Days</span>
+          </div>
+          <div class="cd-colon" aria-hidden="true">:</div>
+          <div class="cd-unit">
+            <div class="cd-box" id="cd-hours"><span class="cd-num" id="hrs-num">00</span></div>
+            <span class="cd-lbl">Hours</span>
+          </div>
+          <div class="cd-colon" aria-hidden="true">:</div>
+          <div class="cd-unit">
+            <div class="cd-box" id="cd-mins"><span class="cd-num" id="min-num">00</span></div>
+            <span class="cd-lbl">Mins</span>
+          </div>
+          <div class="cd-colon" aria-hidden="true">:</div>
+          <div class="cd-unit">
+            <div class="cd-box" id="cd-secs"><span class="cd-num" id="sec-num">00</span></div>
+            <span class="cd-lbl">Secs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#" id="hero-register-btn" class="btn btn-primary btn-lg btn-glow btn-magnetic" aria-label="Register for ArtiWhiz'26">
+          <span class="btn-inner">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            Register Now
+          </span>
+          <span class="btn-glow-ring"></span>
+        </a>
+        <a href="#about" class="btn btn-outline btn-magnetic" aria-label="Learn more">
+          <span class="btn-inner">Explore ↓</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-dot-inner"></div></div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="wave-divider wave-hero-about" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#f0fdf4"/></svg>
+  </div>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="section about-section" aria-labelledby="about-title">
+    <div class="section-bg-grid" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal-item">About the Symposium</span>
+        <h2 class="section-title scramble-title reveal-item" id="about-title">
+          Innovating for a <span class="text-grad">Sustainable Future</span>
+        </h2>
+        <p class="section-desc reveal-item">Where ideas spark change and technology meets purpose</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-text reveal-item">
+          <p><strong>ArtiWhiz'26</strong> is an <em>International Student Symposium</em> on <em>Humanizing Technology</em>, organized by the <strong>Department of Artificial Intelligence & Data Science</strong> and the <strong>Skylark Association</strong> at <strong>E.G.S. Pillay Engineering College</strong>, Nagapattinam.</p>
+          <p>Themed <strong>"AI for Sustainability"</strong>, this two-day event brings together brilliant minds to explore how AI can solve the world's most pressing environmental and societal challenges.</p>
+          <p>Guided by <strong>Sustainable · Inclusive · Ethical · Responsible</strong> values, we invite students across India and beyond to compete, collaborate, and co-create.</p>
+          <div class="value-pills">
+            <span class="pill">🌱 Sustainable</span>
+            <span class="pill">🤝 Inclusive</span>
+            <span class="pill">⚖️ Ethical</span>
+            <span class="pill">🛡️ Responsible</span>
+          </div>
+        </div>
+
+        <div class="about-stats reveal-item">
+          <div class="stat-card glass-card floating" data-float-delay="0">
+            <div class="stat-icon">📅</div>
+            <div class="stat-num">2</div>
+            <div class="stat-label">Days</div>
+          </div>
+          <div class="stat-card glass-card floating" data-float-delay="0.3">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-num">5</div>
+            <div class="stat-label">Events</div>
+          </div>
+          <div class="stat-card glass-card floating" data-float-delay="0.6">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-num">₹9K+</div>
+            <div class="stat-label">Prizes</div>
+          </div>
+          <div class="stat-card glass-card floating" data-float-delay="0.9">
+            <div class="stat-icon">🌍</div>
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Impact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="wave-divider wave-about-events" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#ffffff"/></svg>
+  </div>
+
+  <!-- ─── ONLINE EVENTS ─── -->
+  <section id="online-events" class="section events-section online-events-section" aria-labelledby="online-title">
+    <div class="events-bg-anim" aria-hidden="true">
+      <div class="ebg-orb ebg-orb-1"></div>
+      <div class="ebg-orb ebg-orb-2"></div>
+    </div>
+    <!-- Self-drawing circuit paths -->
+    <svg class="section-circuit sc-left" viewBox="0 0 200 400" fill="none" aria-hidden="true">
+      <path class="sc-path" d="M100 0 L100 80 L30 80 L30 160 L100 160 L100 240 L30 240 L30 320 L100 320 L100 400"/>
+      <circle class="sc-dot" cx="100" cy="80" r="5"/>
+      <circle class="sc-dot" cx="30" cy="160" r="5"/>
+      <circle class="sc-dot" cx="100" cy="240" r="5"/>
+      <circle class="sc-dot" cx="30" cy="320" r="5"/>
+    </svg>
+    <svg class="section-circuit sc-right" viewBox="0 0 200 400" fill="none" aria-hidden="true">
+      <path class="sc-path" d="M100 0 L100 80 L170 80 L170 160 L100 160 L100 240 L170 240 L170 320 L100 320 L100 400"/>
+      <circle class="sc-dot" cx="100" cy="80" r="5"/>
+      <circle class="sc-dot" cx="170" cy="160" r="5"/>
+      <circle class="sc-dot" cx="100" cy="240" r="5"/>
+      <circle class="sc-dot" cx="170" cy="320" r="5"/>
+    </svg>
+
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge online-badge reveal-item">🌐 Day 1 — 14 October 2026</span>
+        <h2 class="section-title scramble-title reveal-item" id="online-title">Online <span class="text-grad">Events</span></h2>
+        <p class="section-desc reveal-item">Join from anywhere in the world</p>
+      </div>
+      <div class="events-grid" id="online-events-grid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,20 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#0a1128"/></svg>
+  </div>
+
+  <!-- ─── OFFLINE EVENTS ─── -->
+  <section id="offline-events" class="section events-section offline-events-section" aria-labelledby="offline-title">
+    <div class="offline-bg-stars" aria-hidden="true" id="stars-bg"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge offline-badge reveal-item">📍 Day 2 — 15 October 2026</span>
+        <h2 class="section-title scramble-title reveal-item" id="offline-title" style="color:#fff">Offline <span class="text-grad">Events</span></h2>
+        <p class="section-desc reveal-item" style="color:rgba(255,255,255,.6)">In-Person · E.G.S. Pillay Engineering College</p>
+      </div>
+
+      <div class="cat-header reveal-item">
+        <div class="cat-pill cat-tech">⚙️ Technical Events</div>
+      </div>
+      <div class="events-grid" id="technical-events-grid" role="list"></div>
+
+      <div class="cat-header reveal-item" style="margin-top:3rem">
+        <div class="cat-pill cat-nontech">🎨 Non-Technical Event</div>
+      </div>
+      <div class="events-grid events-single" id="nontechnical-events-grid" role="list"></div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="#f0fdf4"/></svg>
+  </div>
+
+  <!-- ─── PRIZES ─── -->
+  <section id="prizes" class="section prizes-section" aria-labelledby="prizes-title">
+    <div class="prizes-beam prizes-beam-1" aria-hidden="true"></div>
+    <div class="prizes-beam prizes-beam-2" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal-item">🏆 Recognition & Rewards</span>
+        <h2 class="section-title scramble-title reveal-item" id="prizes-title">Prizes &amp; <span class="text-grad">Perks</span></h2>
+      </div>
+
+      <div class="podium-wrap reveal-item" role="list" aria-label="Prize details">
+        <div class="podium-card silver-card" role="listitem">
+          <div class="podium-glow"></div>
+          <div class="podium-rank">2<sup>nd</sup></div>
+          <div class="podium-medal">🥈</div>
+          <div class="podium-amount"><span class="rupee-sym">₹</span><span class="prize-count" data-target="3000">0</span></div>
+          <div class="podium-bar" style="height:110px"></div>
+        </div>
+        <div class="podium-card gold-card" role="listitem">
+          <div class="podium-glow"></div>
+          <div class="podium-rank">1<sup>st</sup></div>
+          <div class="podium-medal">🥇</div>
+          <div class="podium-amount"><span class="rupee-sym">₹</span><span class="prize-count" data-target="5000">0</span></div>
+          <div class="podium-bar" style="height:150px"></div>
+        </div>
+        <div class="podium-card bronze-card" role="listitem">
+          <div class="podium-glow"></div>
+          <div class="podium-rank">3<sup>rd</sup></div>
+          <div class="podium-medal">🥉</div>
+          <div class="podium-amount"><span class="rupee-sym">₹</span><span class="prize-count" data-target="1000">0</span></div>
+          <div class="podium-bar" style="height:80px"></div>
+        </div>
+      </div>
+
+      <div class="perks-row">
+        <div class="perk-card glass-card reveal-item">
+          <div class="perk-glow"></div>
+          <div class="perk-emoji">💳</div>
+          <h3>Entry Fee</h3>
+          <div class="perk-big">₹100</div>
+          <p>Per participant</p>
+        </div>
+        <div class="perk-card glass-card reveal-item">
+          <div class="perk-glow"></div>
+          <div class="perk-emoji">🍽️</div>
+          <h3>Free Food</h3>
+          <p>Complimentary refreshments for all offline participants on Day 2</p>
+        </div>
+        <div class="perk-card glass-card reveal-item">
+          <div class="perk-glow"></div>
+          <div class="perk-emoji">📜</div>
+          <h3>Certificates</h3>
+          <p>Digital participation certificates for every registered participant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#ffffff"/></svg>
+  </div>
+
+  <!-- ─── COORDINATORS ─── -->
+  <section id="coordinators" class="section coord-section" aria-labelledby="coord-title">
+    <div class="coord-bg-deco" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal-item">👥 Meet the Team</span>
+        <h2 class="section-title scramble-title reveal-item" id="coord-title">Event <span class="text-grad">Coordinators</span></h2>
+      </div>
+
+      <div class="coord-tier reveal-item">
+        <h3 class="tier-label">Convener</h3>
+        <div class="coord-row coord-row-center">
+          <div class="coord-card glass-card" data-initials="JA" data-role="convener">
+            <div class="coord-avatar-wrap"><div class="coord-avatar"><span>JA</span></div><div class="coord-avatar-ring"></div></div>
+            <h4>Dr. J. Amutha</h4><p>HoD / AI&amp;DS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="coord-tier reveal-item">
+        <h3 class="tier-label">Co-Conveners</h3>
+        <div class="coord-row">
+          <div class="coord-card glass-card" data-initials="SA">
+            <div class="coord-avatar-wrap"><div class="coord-avatar"><span>SA</span></div><div class="coord-avatar-ring"></div></div>
+            <h4>Mrs. S. Akilandeswari</h4><p>AHoD / AI&amp;DS</p>
+          </div>
+          <div class="coord-card glass-card" data-initials="KR">
+            <div class="coord-avatar-wrap"><div class="coord-avatar"><span>KR</span></div><div class="coord-avatar-ring"></div></div>
+            <h4>Ms. K. Rahapriya</h4><p>AHoD / AI&amp;DS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="coord-tier reveal-item">
+        <h3 class="tier-label">Faculty Coordinators</h3>
+        <div class="coord-row">
+          <div class="coord-card glass-card">
+            <div class="coord-avatar-wrap"><div class="coord-avatar"><span>SS</span></div><div class="coord-avatar-ring"></div></div>
+            <h4>Mrs. S. Shajini</h4><p>AP / AI&amp;DS</p>
+          </div>
+          <div class="coord-card glass-card">
+            <div class="coord-avatar-wrap"><div class="coord-avatar"><span>NN</span></div><div class="coord-avatar-ring"></div></div>
+            <h4>Mrs. N. Nivetha</h4><p>AP / AI&amp;DS</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="coord-tier reveal-item">
+        <h3 class="tier-label">Student Coordinators — Skylark Association</h3>
+        <div class="coord-row coord-row-students">
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>MA</span></div><div class="coord-avatar-ring"></div></div><h4>M. Akash</h4><p>President</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>RR</span></div><div class="coord-avatar-ring"></div></div><h4>R. Rajeshwari</h4><p>Secretary</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SD</span></div><div class="coord-avatar-ring"></div></div><h4>S. Deepika</h4><p>Vice President</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>BA</span></div><div class="coord-avatar-ring"></div></div><h4>B. Anu</h4><p>Joint Secretary</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>YY</span></div><div class="coord-avatar-ring"></div></div><h4>Y. Yokitha</h4><p>Treasurer</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SA</span></div><div class="coord-avatar-ring"></div></div><h4>S. Annamalai</h4><p>Co-Treasurer</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER / CONTACT ─── -->
+  <footer id="contact" class="footer" aria-labelledby="contact-title">
+    <canvas id="footer-canvas" aria-hidden="true"></canvas>
+    <div class="footer-noise" aria-hidden="true"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand reveal-item">
+          <div class="footer-logo">
+            <svg viewBox="0 0 32 38" fill="none" width="32" height="38" aria-hidden="true">
+              <path d="M16 36 C16 36 1 26 1 14 C1 4 7 1 16 1 C25 1 31 4 31 14 C31 26 16 36 16 36Z" fill="url(#flg)"/>
+              <path d="M16 36 L16 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+              <defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="#0d5c2f"/></linearGradient></defs>
+            </svg>
+            ArtiWhiz<span>'26</span>
+          </div>
+          <p>Dept. of AI &amp; Data Science &amp; Skylark Association<br/>E.G.S. Pillay Engineering College, Nagapattinam</p>
+          <p class="footer-tagline">"Ideas Today | Innovations Tomorrow"</p>
+          <div class="social-row" role="list" aria-label="Social media">
+            <a href="https://instagram.com/egspgoi" target="_blank" rel="noopener" class="soc-btn" id="soc-instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://wa.me/919047977671" target="_blank" rel="noopener" class="soc-btn" id="soc-whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="https://facebook.com/egspgoi" target="_blank" rel="noopener" class="soc-btn" id="soc-facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://x.com/egspgoi" target="_blank" rel="noopener" class="soc-btn" id="soc-x" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://linkedin.com/school/egspgoi" target="_blank" rel="noopener" class="soc-btn" id="soc-linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://youtube.com/@egspgoi" target="_blank" rel="noopener" class="soc-btn" id="soc-youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col reveal-item">
+          <h3 id="contact-title">Contact Us</h3>
+          <ul class="contact-list">
+            <li><span>📞</span><a href="tel:+919047977671">+91 90479 77671</a> <em>(Akash)</em></li>
+            <li><span>📞</span><a href="tel:+919342119818">+91 93421 19818</a> <em>(Rajeshwari)</em></li>
+            <li><span>📞</span><a href="tel:+919363087377">+91 93630 87377</a></li>
+            <li><span>📞</span><a href="tel:+919976888999">+91 99768 88999</a></li>
+            <li><span>✉️</span><a href="mailto:artiwhiz@egspec.org">artiwhiz@egspec.org</a></li>
+            <li><span>📍</span><span>Old Nagore Main Road, Thethi,<br/>Nagapattinam, Tamil Nadu – 611002</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal-item">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#online-events">Online Events</a></li>
+            <li><a href="#offline-events">Offline Events</a></li>
+            <li><a href="#prizes">Prizes &amp; Perks</a></li>
+            <li><a href="#coordinators">Coordinators</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfFi8j0-6dt9lEoOHJ0X4zBSdIl6hD9LqXfQBrwCgBvUy_gJQ/viewform" target="_blank" rel="noopener" class="footer-reg-link">Register Now →</a></li>
+          </ul>
+        </div>
+      </div>
+
+            <div class="footer-college-wrap reveal-item">
+        <div class="college-accreditation-banner">
+          <div class="college-title-row">
+            <span class="egs-box">EGS</span>
+            <span class="pillay-box">PILLAY</span>
+            <span class="college-text">ENGINEERING COLLEGE</span>
+          </div>
+          <p class="college-accreditation-line">
+            NBA Tier I Accreditation for All Eligible Programs | NAAC Grade A++
+          </p>
+          <p class="college-affiliation-line">
+            An Autonomous Institution | Affiliated to Anna University
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 ArtiWhiz · E.G.S. Pillay Engineering College · All rights reserved</p>
+        <p class="footer-tagline-btm">Ideas Today | Innovations Tomorrow</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
