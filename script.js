@@ -23,7 +23,6 @@ const ONLINE_EVENTS = [
     id: "pre-symposium", name: "Pre-Symposium Event", icon: "🎓",
     tag: "Webinar", tagType: "online",
     description: "Kickstart ArtiWhiz'26 with an inspiring online webinar featuring industry experts sharing cutting-edge insights on AI for Sustainability — open to all registered participants.",
-    formUrl: UNSTOP_ONLINE_URL,
   },
 ];
 
@@ -47,7 +46,6 @@ const NON_TECHNICAL_EVENTS = [
     id: "arise", name: "ARISE", icon: "🌟",
     tag: "Non-Technical", tagType: "nontechnical",
     description: "An exciting non-technical event blending creativity, teamwork, and sustainability awareness. Think outside the box, test lateral thinking, and solve problems beyond code.",
-    formUrl: GOOGLE_FORM_URL,
   },
 ];
 
@@ -754,13 +752,7 @@ function renderEvents() {
     art.className = `event-card ${dark ? "event-card-offline" : "event-card-online"}`;
     art.setAttribute("role","listitem");
     art.setAttribute("aria-label", `${ev.name} — ${ev.tag}`);
-    art.innerHTML = `
-      <div class="event-icon-wrap"><span aria-hidden="true">${ev.icon}</span></div>
-      <div>
-        <span class="event-tag ${tagClass[ev.tagType]||"tag-online"}">${ev.tag}</span>
-        <h3>${ev.name}</h3>
-      </div>
-      <p class="event-desc">${ev.description}</p>
+    const regBtnHtml = ev.formUrl ? `
       <a href="${ev.formUrl}" target="_blank" rel="noopener noreferrer"
          class="btn btn-event btn-sm btn-magnetic"
          id="reg-${ev.id}" aria-label="Register for ${ev.name}">
@@ -770,7 +762,16 @@ function renderEvents() {
           </svg>
           Register Now
         </span>
-      </a>`;
+      </a>` : '';
+
+    art.innerHTML = `
+      <div class="event-icon-wrap"><span aria-hidden="true">${ev.icon}</span></div>
+      <div>
+        <span class="event-tag ${tagClass[ev.tagType]||"tag-online"}">${ev.tag}</span>
+        <h3>${ev.name}</h3>
+      </div>
+      <p class="event-desc">${ev.description}</p>
+      ${regBtnHtml}`;
     return art;
   };
 
