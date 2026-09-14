@@ -378,9 +378,140 @@ function initFooterCanvas() {
 function buildHeroLetters() {
   const el = $(".title-text");
   if (!el) return;
-  el.innerHTML = [...`ArtiWhiz'26`]
-    .map(c => `<span class="letter" aria-hidden="true">${c === " " ? "&nbsp;" : c}</span>`)
+  const mainPart = "ArtiWhiz";
+  const greenPart = "'26";
+  
+  const mainHTML = [...mainPart]
+    .map(c => `<span class="letter letter-main" aria-hidden="true">${c}</span>`)
     .join("");
+  const greenHTML = [...greenPart]
+    .map(c => `<span class="letter letter-green" aria-hidden="true">${c}</span>`)
+    .join("");
+    
+  el.innerHTML = `<span class="title-group-main">${mainHTML}</span><span class="title-group-green">${greenHTML}</span>`;
+  
+  initHeroInteractivity();
+}
+
+function initHeroInteractivity() {
+  const heroTitle = $("#hero-main-title");
+  if (!heroTitle) return;
+
+  const letters = $$(".letter");
+  letters.forEach((l, idx) => {
+    l.style.setProperty("--letter-index", idx);
+  });
+
+  let rX = 0, rY = 0;
+  let targetRX = 0, targetRY = 0;
+  
+  const updateTilt = () => {
+    rX += (targetRX - rX) * 0.1;
+    rY += (targetRY - rY) * 0.1;
+    if (Math.abs(rX) > 0.01 || Math.abs(rY) > 0.01) {
+      heroTitle.style.transform = `perspective(1000px) rotateX(${rX.toFixed(2)}deg) rotateY(${rY.toFixed(2)}deg)`;
+    }
+    requestAnimationFrame(updateTilt);
+  };
+  updateTilt();
+
+  window.addEventListener("mousemove", (e) => {
+    const rect = heroTitle.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const dist = Math.hypot(e.clientX - centerX, e.clientY - centerY);
+    
+    if (dist < 600) {
+      targetRX = ((e.clientY - centerY) / rect.height) * -12;
+      targetRY = ((e.clientX - centerX) / rect.width) * 14;
+    } else {
+      targetRX = 0;
+      targetRY = 0;
+    }
+  });
+
+  // Mobile Touch & Drag Interaction
+  const handleTouch = (e) => {
+    if (!e.touches || !e.touches[0]) return;
+    const touch = e.touches[0];
+    const targetEl = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    if (targetEl && targetEl.classList.contains("letter")) {
+      targetEl.classList.add("letter-pop");
+      setTimeout(() => targetEl.classList.remove("letter-pop"), 400);
+      createParticleBurst(touch.clientX, touch.clientY);
+    }
+  };
+
+  heroTitle.addEventListener("touchstart", handleTouch, { passive: true });
+  heroTitle.addEventListener("touchmove", handleTouch, { passive: true });
+
+  // Mobile Gyroscope Device Orientation Tilt
+  if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", (e) => {
+      if (e.gamma !== null && e.beta !== null) {
+        targetRY = Math.max(-14, Math.min(14, e.gamma / 2));
+        targetRX = Math.max(-10, Math.min(10, (e.beta - 45) / 3));
+      }
+    }, { passive: true });
+  }
+
+  heroTitle.addEventListener("click", (e) => {
+    createParticleBurst(e.clientX, e.clientY);
+  });
+
+  const presenterTitle = $(".symposium-header-banner .event-title");
+  if (presenterTitle) {
+    presenterTitle.addEventListener("click", (e) => {
+      createParticleBurst(e.clientX, e.clientY);
+    });
+  }
+
+  // Activate continuous letter wave floating after brief delay
+  setTimeout(() => {
+    heroTitle.classList.add("wave-active");
+  }, 1200);
+}
+
+function createParticleBurst(x, y) {
+  const colors = ["#22c55e", "#4ade80", "#ffffff", "#86efac", "#34d399"];
+  const numParticles = 24;
+  
+  for (let i = 0; i < numParticles; i++) {
+    const particle = document.createElement("div");
+    particle.className = "title-spark-particle";
+    
+    const size = Math.random() * 8 + 4;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const angle = (Math.PI * 2 * i) / numParticles + (Math.random() * 0.4 - 0.2);
+    const velocity = Math.random() * 90 + 40;
+    const tx = Math.cos(angle) * velocity;
+    const ty = Math.sin(angle) * velocity;
+    
+    Object.assign(particle.style, {
+      position: "fixed",
+      left: `${x}px`,
+      top: `${y}px`,
+      width: `${size}px`,
+      height: `${size}px`,
+      backgroundColor: color,
+      borderRadius: "50%",
+      pointerEvents: "none",
+      zIndex: "10001",
+      boxShadow: `0 0 12px ${color}`,
+      transform: "translate(-50%, -50%) scale(1)",
+      transition: "transform 0.8s cubic-bezier(0.1, 0.8, 0.3, 1), opacity 0.8s ease"
+    });
+    
+    document.body.appendChild(particle);
+    
+    requestAnimationFrame(() => {
+      particle.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0)`;
+      particle.style.opacity = "0";
+    });
+    
+    setTimeout(() => particle.remove(), 850);
+  }
 }
 
 function animateHeroEntrance() {
@@ -392,8 +523,9 @@ function animateHeroEntrance() {
       const el=$(s); if(el){el.style.opacity="1";el.style.transform="none";}
     });
     $$(".letter").forEach(l => { l.style.opacity="1"; l.style.transform="none"; });
-    // Show hero badges
     $$(".hero-badge").forEach(b => { b.style.opacity="1"; b.style.transform="none"; });
+    const title = $("#hero-main-title");
+    if (title) title.classList.add("wave-active");
     startTypewriter();
     return;
   }
@@ -410,6 +542,10 @@ function animateHeroEntrance() {
     .to(".letter", {
       opacity:1, y:0, rotate:0, duration:.75,
       stagger:{ each:.04, ease:"power2.out" },
+      onComplete: () => {
+        const title = $("#hero-main-title");
+        if (title) title.classList.add("wave-active");
+      }
     }, "-=.2")
 
     .to(".hero-subtitle-wrap", { opacity:1, duration:.5 }, "-=.4")
@@ -421,7 +557,6 @@ function animateHeroEntrance() {
     .to(".countdown-wrap", { opacity:1, duration:.5 }, "-=.25")
     .to(".hero-cta", { opacity:1, duration:.5 }, "-=.2")
 
-    // floating badges appear
     .to(".hero-badge-ai", { opacity:1, x:0, duration:.6, ease:"back.out(2)" }, "-=.3")
     .to(".hero-badge-eco", { opacity:1, x:0, duration:.6, ease:"back.out(2)" }, "-=.5");
 }
