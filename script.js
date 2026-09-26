@@ -16,12 +16,14 @@ const ONLINE_EVENTS = [
   {
     id: "arvexis", name: "ARVEXIS", icon: "🔍",
     tag: "Case Study Presentation", tagType: "online",
+    teamSize: "2 – 3 Members",
     description: "Showcase your analytical prowess by presenting a compelling case study on how AI can solve a real-world sustainability challenge. Present data-driven insights and innovative AI-powered solutions.",
     formUrl: UNSTOP_ONLINE_URL,
   },
   {
     id: "pre-symposium", name: "Pre-Symposium Event", icon: "🎓",
     tag: "Webinar", tagType: "online",
+    teamSize: "Open to All",
     description: "Kickstart ArtiWhiz'26 with an inspiring online webinar featuring industry experts sharing cutting-edge insights on AI for Sustainability — open to all registered participants.",
   },
 ];
@@ -30,12 +32,14 @@ const TECHNICAL_EVENTS = [
   {
     id: "arvena", name: "ARVENA", icon: "📄",
     tag: "Article Presentation", tagType: "technical",
+    teamSize: "2 – 3 Members",
     description: "Craft and present a well-researched technical article on AI-driven sustainability innovations. Demonstrate your writing, research depth, and communication skills.",
     formUrl: GOOGLE_FORM_URL,
   },
   {
     id: "arcova", name: "ARCOVA", icon: "💻",
     tag: "Hackathon", tagType: "technical",
+    teamSize: "2 – 3 Members",
     description: "Intensive hackathon to build an AI-powered solution that addresses a real sustainability problem. Code, innovate, and compete for glory, prizes, and recognition.",
     formUrl: GOOGLE_FORM_URL,
   },
@@ -45,7 +49,9 @@ const NON_TECHNICAL_EVENTS = [
   {
     id: "arise", name: "ARISE", icon: "🌟",
     tag: "Non-Technical", tagType: "nontechnical",
+    teamSize: "2 – 3 Members",
     description: "An exciting non-technical event blending creativity, teamwork, and sustainability awareness. Think outside the box, test lateral thinking, and solve problems beyond code.",
+    formUrl: GOOGLE_FORM_URL,
   },
 ];
 
@@ -99,7 +105,7 @@ class TextScramble {
         if (!this.queue[i].char || Math.random() < 0.28) {
           this.queue[i].char = this.chars[Math.floor(Math.random() * this.chars.length)];
         }
-        out += `<span class="scramble-char" style="color:rgba(34,197,94,.55)">${this.queue[i].char}</span>`;
+        out += `<span class="scramble-char" style="color:rgba(217,70,239,.75)">${this.queue[i].char}</span>`;
       } else {
         out += from;
       }
@@ -125,8 +131,8 @@ function initLoader() {
   const svgDefs = `<svg width="0" height="0" style="position:absolute">
     <defs>
       <linearGradient id="leafGradLoader" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#22c55e"/>
-        <stop offset="100%" stop-color="#0d5c2f"/>
+        <stop offset="0%" stop-color="#d946ef"/>
+        <stop offset="100%" stop-color="#06b6d4"/>
       </linearGradient>
     </defs>
   </svg>`;
@@ -224,7 +230,7 @@ function initHeroCanvas() {
       this.vx = (Math.random() - 0.5) * 0.35;
       this.vy = -(Math.random() * 0.5 + 0.1);
       this.alpha = Math.random() * 0.55 + 0.08;
-      this.hue = 120 + Math.random() * 40;
+      this.hue = Math.random() > 0.5 ? (275 + Math.random() * 45) : (185 + Math.random() * 25);
       this.type = Math.floor(Math.random() * 4);
       this.rot = Math.random() * Math.PI * 2;
       this.rotV = (Math.random() - 0.5) * 0.008;
@@ -302,7 +308,7 @@ function initHeroCanvas() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x,particles[i].y);
           ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.strokeStyle=`rgba(34,197,94,${.1*(1-d/110)})`;
+          ctx.strokeStyle=`rgba(168,85,247,${.18*(1-d/110)})`;
           ctx.lineWidth=.6; ctx.stroke();
         }
       }
@@ -360,7 +366,7 @@ function initFooterCanvas() {
       const y = H * (0.3 + 0.2*Math.sin(t*0.7+i*1.2));
       const r = W * 0.25;
       const g = ctx.createRadialGradient(x,y,0,x,y,r);
-      g.addColorStop(0, `rgba(34,197,94,${0.04+0.02*Math.sin(t+i)})`);
+      g.addColorStop(0, `rgba(217,70,239,${0.05+0.025*Math.sin(t+i)})`);
       g.addColorStop(1, "transparent");
       ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2);
       ctx.fillStyle=g; ctx.fill();
@@ -474,7 +480,7 @@ function initHeroInteractivity() {
 }
 
 function createParticleBurst(x, y) {
-  const colors = ["#22c55e", "#4ade80", "#ffffff", "#86efac", "#34d399"];
+  const colors = ["#d946ef", "#a855f7", "#06b6d4", "#ffffff", "#ec4899", "#00f0ff"];
   const numParticles = 24;
   
   for (let i = 0; i < numParticles; i++) {
@@ -887,6 +893,11 @@ function renderEvents() {
     art.className = `event-card ${dark ? "event-card-offline" : "event-card-online"}`;
     art.setAttribute("role","listitem");
     art.setAttribute("aria-label", `${ev.name} — ${ev.tag}`);
+    const teamBadge = ev.teamSize ? `
+      <span class="event-teamsize" title="Team format">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        ${ev.teamSize}
+      </span>` : '';
     const regBtnHtml = ev.formUrl ? `
       <a href="${ev.formUrl}" target="_blank" rel="noopener noreferrer"
          class="btn btn-event btn-sm btn-magnetic"
@@ -902,7 +913,10 @@ function renderEvents() {
     art.innerHTML = `
       <div class="event-icon-wrap"><span aria-hidden="true">${ev.icon}</span></div>
       <div>
-        <span class="event-tag ${tagClass[ev.tagType]||"tag-online"}">${ev.tag}</span>
+        <div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.35rem">
+          <span class="event-tag ${tagClass[ev.tagType]||"tag-online"}">${ev.tag}</span>
+          ${teamBadge}
+        </div>
         <h3>${ev.name}</h3>
       </div>
       <p class="event-desc">${ev.description}</p>
@@ -956,6 +970,220 @@ function initRegisterBtns() {
   $$(".modal-opt-card").forEach(card => {
     card.addEventListener("click", closeModal);
   });
+}
+
+/* ═══════════════════════════════════════════
+   BROCHURE MODAL & INTERACTIVE LIGHTBOX
+   ═══════════════════════════════════════════ */
+function initBrochureModal() {
+  const modal = $("#brochure-modal");
+  const overlay = $("#brochure-modal-overlay");
+  const closeBtn = $("#brochure-modal-close");
+  const trigger = $("#brochure-preview-trigger");
+  const expandBtn = $("#btn-brochure-expand");
+  const shareBtn = $("#btn-brochure-share");
+  const regNowBtn = $("#btn-brochure-register-now");
+  
+  const viewport = $("#brochure-viewport");
+  const transformWrap = $("#brochure-transform-wrap");
+  const zoomInBtn = $("#b-zoom-in");
+  const zoomOutBtn = $("#b-zoom-out");
+  const zoomResetBtn = $("#b-zoom-reset");
+
+  if (!modal) return;
+
+  let zoomLevel = 1;
+  const zoomStep = 0.25;
+  const minZoom = 0.6;
+  const maxZoom = 3.0;
+
+  let isDragging = false;
+  let startX = 0, startY = 0;
+  let translateX = 0, translateY = 0;
+
+  const updateTransform = () => {
+    if (!transformWrap) return;
+    transformWrap.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
+    if (zoomResetBtn) zoomResetBtn.textContent = `${Math.round(zoomLevel * 100)}%`;
+  };
+
+  const setZoom = (newZoom) => {
+    zoomLevel = clamp(newZoom, minZoom, maxZoom);
+    if (zoomLevel === 1) {
+      translateX = 0;
+      translateY = 0;
+    }
+    updateTransform();
+  };
+
+  const openModal = () => {
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    zoomLevel = 1;
+    translateX = 0;
+    translateY = 0;
+    updateTransform();
+    requestAnimationFrame(() => modal.classList.add("is-open"));
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    setTimeout(() => { modal.hidden = true; }, 300);
+  };
+
+  trigger?.addEventListener("click", openModal);
+  trigger?.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(); } });
+  expandBtn?.addEventListener("click", openModal);
+
+  closeBtn?.addEventListener("click", closeModal);
+  overlay?.addEventListener("click", closeModal);
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && modal && !modal.hidden) closeModal();
+    if (!modal.hidden) {
+      if (e.key === "+" || e.key === "=") setZoom(zoomLevel + zoomStep);
+      if (e.key === "-" || e.key === "_") setZoom(zoomLevel - zoomStep);
+      if (e.key === "0") setZoom(1);
+    }
+  });
+
+  // Zoom buttons
+  zoomInBtn?.addEventListener("click", () => setZoom(zoomLevel + zoomStep));
+  zoomOutBtn?.addEventListener("click", () => setZoom(zoomLevel - zoomStep));
+  zoomResetBtn?.addEventListener("click", () => setZoom(1));
+
+  // Double click toggle zoom
+  viewport?.addEventListener("dblclick", (e) => {
+    e.preventDefault();
+    setZoom(zoomLevel > 1.2 ? 1 : 1.8);
+  });
+
+  // Wheel zoom
+  viewport?.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const delta = e.deltaY < 0 ? zoomStep : -zoomStep;
+    setZoom(zoomLevel + delta);
+  }, { passive: false });
+
+  // Pan & Drag
+  if (viewport) {
+    viewport.addEventListener("mousedown", (e) => {
+      if (e.target.closest(".b-tool-btn") || e.button !== 0) return;
+      isDragging = true;
+      viewport.classList.add("is-dragging");
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      updateTransform();
+    });
+
+    window.addEventListener("mouseup", () => {
+      if (isDragging) {
+        isDragging = false;
+        viewport.classList.remove("is-dragging");
+      }
+    });
+
+    // Touch support
+    let initialDistance = null;
+    let initialZoom = 1;
+    viewport.addEventListener("touchstart", (e) => {
+      if (e.touches.length === 2) {
+        initialDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        initialZoom = zoomLevel;
+      } else if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - translateX;
+        startY = e.touches[0].clientY - translateY;
+      }
+    }, { passive: true });
+
+    viewport.addEventListener("touchmove", (e) => {
+      if (e.touches.length === 2 && initialDistance) {
+        const dist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        setZoom(initialZoom * (dist / initialDistance));
+      } else if (e.touches.length === 1 && isDragging) {
+        translateX = e.touches[0].clientX - startX;
+        translateY = e.touches[0].clientY - startY;
+        updateTransform();
+      }
+    }, { passive: true });
+
+    viewport.addEventListener("touchend", () => {
+      isDragging = false;
+      initialDistance = null;
+    });
+  }
+
+  // Share functionality
+  shareBtn?.addEventListener("click", async () => {
+    const shareData = {
+      title: "ArtiWhiz '26 Official Brochure",
+      text: "Explore the official symposium brochure for ArtiWhiz'26 (14–15 October 2026) at E.G.S. Pillay Engineering College. ₹9K+ cash prizes, Hackathon, Case Study & more!",
+      url: window.location.origin + window.location.pathname + "#brochure",
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // Share cancelled or failed
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        showToast("Brochure link copied to clipboard! 📋");
+      } catch (e) {
+        showToast("Share link: " + shareData.url);
+      }
+    }
+  });
+
+  // Register Now trigger from brochure
+  regNowBtn?.addEventListener("click", () => {
+    const regModal = $("#reg-modal");
+    if (regModal) {
+      regModal.hidden = false;
+      document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => regModal.classList.add("is-open"));
+    }
+  });
+}
+
+function showToast(msg) {
+  let toast = $("#brochure-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "brochure-toast";
+    toast.style.cssText = `
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: rgba(13, 27, 62, 0.95); border: 1px solid rgba(217, 70, 239, 0.7);
+      color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 999px; font-family: var(--font-head);
+      font-size: 0.9rem; font-weight: 600; z-index: 99999; backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 25px rgba(217, 70, 239, 0.5);
+      opacity: 0; pointer-events: none; transition: all 0.3s ease;
+    `;
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.opacity = "1";
+  toast.style.transform = "translateX(-50%) translateY(0)";
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(-50%) translateY(20px)";
+  }, 2600);
 }
 
 /* ═══════════════════════════════════════════
@@ -1103,6 +1331,7 @@ function bootstrap() {
   initLoader();
   renderEvents();
   initRegisterBtns();
+  initBrochureModal();
   initNavbar();
   initMobileMenu();
   initHeroCanvas();

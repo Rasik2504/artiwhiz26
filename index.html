@@ -101,8 +101,15 @@
         "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
         "image": [
+          "https://artiwhiz26.vercel.app/artiwhiz26-brochure.jpg",
+          "https://artiwhiz26.vercel.app/brochure.jpg",
           "https://artiwhiz26.vercel.app/og-image.jpg"
         ],
+        "subjectOf": {
+          "@type": "CreativeWork",
+          "name": "ArtiWhiz '26 Official Brochure",
+          "url": "https://artiwhiz26.vercel.app/artiwhiz26-brochure.jpg"
+        },
         "creator": {
           "@type": "Person",
           "name": "A. Rasik Rahman",
@@ -450,7 +457,7 @@
             "name": "Who are the convenors and student coordinators of Artiwhiz 26?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Convenors of Artiwhiz 26 are Dr. J. Amutha (HoD / AI&DS) and Dr. S. Palani Murugan (HoD / AI&DS). Co-Conveners are Mrs. S. Akilandeswari and Ms. K. Rahapriya. Faculty Coordinators are Mrs. S. Shajini and Mrs. N. Nivetha. Student Coordinators (Skylark Association) are A. Rasik Rahman (Web Designer), M. Akash (President - +91 90479 77671), R. Rajeshwari (Secretary - +91 93421 19818), S. Deepika (Vice President), B. Anu (Joint Secretary), V. Yokita (Treasurer), and S. Annamalai (Co-Treasurer)."
+              "text": "The Convenors of Artiwhiz 26 are Dr. S. Palani Murugan (Academic Director, Associate Professor / AI&DS) and Dr. J. Amutha (HoD / AI&DS) (HoD / AI&DS). Co-Conveners are Mrs. S. Akilandeswari and Ms. K. Rahapriya. Faculty Coordinators are Mrs. S. Shajini and Mrs. N. Nivetha. Student Coordinators (Skylark Association) are A. Rasik Rahman (Web Designer), M. Akash (President - +91 90479 77671), R. Rajeshwari (Secretary - +91 93421 19818), S. Deepika (Vice President), B. Anu (Joint Secretary), V. Yokita (Treasurer), and S. Annamalai (Co-Treasurer)."
             }
           },
           {
@@ -544,8 +551,8 @@
           <path d="M16 20 L25 14" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
           <defs>
             <linearGradient id="nlg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#22c55e"/>
-              <stop offset="100%" stop-color="#0d5c2f"/>
+              <stop offset="0%" stop-color="#d946ef"/>
+              <stop offset="100%" stop-color="#06b6d4"/>
             </linearGradient>
           </defs>
         </svg>
@@ -555,6 +562,7 @@
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#hero"           class="nav-link" data-section="hero">Home</a></li>
         <li><a href="#about"          class="nav-link" data-section="about">About</a></li>
+        <li><a href="#brochure"       class="nav-link" data-section="brochure">Brochure</a></li>
         <li><a href="#online-events"  class="nav-link" data-section="online-events">Online</a></li>
         <li><a href="#offline-events" class="nav-link" data-section="offline-events">Offline</a></li>
         <li><a href="#prizes"         class="nav-link" data-section="prizes">Prizes</a></li>
@@ -584,6 +592,7 @@
       <ul class="mm-links" role="list">
         <li><a href="#hero"           class="mm-link">🏠 Home</a></li>
         <li><a href="#about"          class="mm-link">ℹ️ About</a></li>
+        <li><a href="#brochure"       class="mm-link">📋 Brochure</a></li>
         <li><a href="#online-events"  class="mm-link">🌐 Online Events</a></li>
         <li><a href="#offline-events" class="mm-link">📍 Offline Events</a></li>
         <li><a href="#prizes"         class="mm-link">🏆 Prizes</a></li>
@@ -640,114 +649,37 @@
     </div>
 
     <div class="hero-content">
-            <!-- Institutional Accreditation Banner -->
-      <div class="college-accreditation-banner reveal-item">
-        <div class="college-banner-left">
-          <div class="college-brand-row">
-            <div class="logo-box egs-box">EGS</div>
-            <div class="logo-box pillay-box">PILLAY</div>
-            <span class="college-word">ENGINEERING COLLEGE</span>
-          </div>
-          <p class="college-accreditation-line">
-            NBA Tier I Accreditation for All Eligible Programs | NAAC Grade A++ | An Autonomous Institution | Affiliated to Anna University
-          </p>
+
+            <!-- Institutional Accreditation Banner (Exact Replica of User Image) -->
+      <div class="college-accreditation-banner reveal-item" id="college-banner">
+        <div class="college-title-row">
+          <span class="egs-box">EGS</span>
+          <span class="pillay-box">PILLAY</span>
+          <span class="college-text">ENGINEERING COLLEGE</span>
+        </div>
+        <p class="college-accreditation-full">
+          NBA Tier I Accreditation for All Eligible Programs <span class="cab-pipe">|</span> NAAC Grade A++ <span class="cab-pipe">|</span> An Autonomous Institution <span class="cab-pipe">|</span> Affiliated to Anna University
+        </p>
+        <div class="cab-divider"></div>
+        <div class="cab-logos-row">
+          <img src="college-accreditation-logos.png" srcset="college-accreditation-logos@2x.png 2x" alt="Accreditation & Affiliations: NBA, NAAC, Anna University, NIRF, ISO 9001" class="cab-logos-img" width="380" height="40" loading="eager" />
         </div>
 
-        <div class="college-banner-right">
-          <!-- 1. NBA Logo -->
-          <div class="accred-badge accred-nba" title="NBA - National Board of Accreditation">
-            <svg viewBox="0 0 115 50" class="accred-svg">
-              <path d="M5 10 h14 v16 h-14 z M23 10 h16 v16 h-16 z M43 10 h14 v16 h-14 z" fill="none"/>
-              <text x="5" y="28" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="28" fill="#00a8e8" letter-spacing="-0.5">NBA</text>
-              <text x="5" y="38" font-family="'Inter', sans-serif" font-weight="700" font-size="6" fill="#00a8e8" letter-spacing="0.3">NATIONAL BOARD</text>
-              <text x="5" y="45" font-family="'Inter', sans-serif" font-weight="700" font-size="5.5" fill="#00a8e8" letter-spacing="0.3">OF ACCREDITATION</text>
-            </svg>
-          </div>
-
-          <!-- 2. AICTE Logo -->
-          <div class="accred-badge accred-aicte" title="AICTE - All India Council for Technical Education">
-            <svg viewBox="0 0 52 52" class="accred-svg">
-              <!-- Outer Gear Teeth -->
-              <g fill="#d97706">
-                <circle cx="26" cy="26" r="23" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="4,2"/>
-                <circle cx="26" cy="26" r="19" fill="none" stroke="#d97706" stroke-width="1.5"/>
-              </g>
-              <!-- Blue Center Disc -->
-              <circle cx="26" cy="24" r="14" fill="#1e3a8a"/>
-              <!-- Gold Lamp Symbol -->
-              <path d="M26 12 L29 19 L36 19 L30 23 L32 30 L26 26 L20 30 L22 23 L16 19 L23 19 Z" fill="#f59e0b"/>
-              <circle cx="26" cy="16" r="2" fill="#ef4444"/>
-              <!-- Bottom Red Banner -->
-              <path d="M10 37 Q26 32 42 37 Q26 43 10 37 Z" fill="#b91c1c"/>
-              <text x="26" y="48" font-family="'Inter', sans-serif" font-weight="800" font-size="4.5" fill="#d97706" text-anchor="middle">AICTE</text>
-            </svg>
-          </div>
-
-          <!-- 3. Anna University Logo -->
-          <div class="accred-badge accred-anna" title="Anna University">
-            <svg viewBox="0 0 56 52" class="accred-svg">
-              <!-- Red Gear Ring -->
-              <circle cx="28" cy="23" r="19" fill="none" stroke="#990000" stroke-width="2.5" stroke-dasharray="3.5,2"/>
-              <circle cx="28" cy="23" r="15" fill="none" stroke="#990000" stroke-width="1.2"/>
-              <!-- Inner Emblem structure -->
-              <polygon points="28,10 35,26 21,26" fill="#990000"/>
-              <rect x="26" y="17" width="4" height="10" fill="#ffffff"/>
-              <!-- Base Red Ribbon -->
-              <path d="M6 38 L50 38 L45 47 L11 47 Z" fill="#990000"/>
-              <text x="28" y="44" font-family="'Inter', sans-serif" font-weight="800" font-size="4.8" fill="#ffffff" text-anchor="middle">ANNA UNIV</text>
-            </svg>
-          </div>
-
-          <!-- 4. NAAC Logo -->
-          <div class="accred-badge accred-naac" title="NAAC - Grade A++">
-            <svg viewBox="0 0 52 52" class="accred-svg">
-              <!-- Red Seal disc -->
-              <circle cx="26" cy="23" r="20" fill="#be123c"/>
-              <circle cx="26" cy="23" r="17" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="2,1"/>
-              <!-- India Map silhouette & Torch -->
-              <path d="M22 12 C26 11 31 14 32 18 C33 22 29 27 24 28 C20 26 19 21 21 16 Z" fill="#ffffff"/>
-              <path d="M26 15 L26 26 M23 16 L29 16" stroke="#be123c" stroke-width="1.8"/>
-              <text x="26" y="47" font-family="'Inter', sans-serif" font-weight="900" font-size="5" fill="#be123c" text-anchor="middle">NAAC</text>
-            </svg>
-          </div>
-
-          <!-- 5. NIRF Logo -->
-          <div class="accred-badge accred-nirf" title="NIRF - National Institutional Ranking Framework">
-            <svg viewBox="0 0 78 52" class="accred-svg">
-              <!-- Red Medal Ribbon on top of i -->
-              <path d="M52 4 C52 4 56 1 60 4 C64 7 61 13 57 12 L57 20 L52 20 Z" fill="#dc2626"/>
-              <circle cx="56" cy="8" r="3" fill="#ffffff"/>
-              <!-- Bold "nirf" font -->
-              <text x="2" y="34" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="28" fill="#03071e" letter-spacing="-1">nirf</text>
-              <!-- Curved Open Book Base -->
-              <path d="M2 38 Q39 34 76 38 Q39 43 2 38 Z" fill="#dc2626"/>
-            </svg>
-          </div>
-
-          <!-- 6. ISO 9001 Logo -->
-          <div class="accred-badge accred-iso" title="ISO 9001 Certified by TÜV NORD">
-            <svg viewBox="0 0 60 50" class="accred-svg">
-              <rect x="2" y="2" width="56" height="46" rx="2" fill="#ffffff" stroke="#475569" stroke-width="1.2"/>
-              <text x="30" y="13" font-family="'Inter', sans-serif" font-weight="800" font-size="6.8" fill="#1e293b" text-anchor="middle">TÜV NORD</text>
-              <line x1="8" y1="17" x2="52" y2="17" stroke="#94a3b8" stroke-width="0.8"/>
-              <text x="30" y="23" font-family="'Inter', sans-serif" font-weight="600" font-size="4.2" fill="#475569" text-anchor="middle">TÜV NORD CERT GmbH</text>
-              <line x1="8" y1="27" x2="52" y2="27" stroke="#1e293b" stroke-width="1"/>
-              <text x="30" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="8.5" fill="#0f172a" text-anchor="middle">ISO 9001</text>
-              <text x="30" y="44" font-family="'Inter', sans-serif" font-weight="500" font-size="3.5" fill="#64748b" text-anchor="middle">System Certified</text>
-            </svg>
-          </div>
-        </div>
       </div>
 
       <!-- Symposium Header Banner (Lines above & below) -->
       <div class="symposium-header-banner reveal-item">
         <div class="banner-line"></div>
-        <p class="banner-text">INTERNATIONAL STUDENT SYMPOSIUM · HUMANIZING TECHNOLOGY</p>
+        <p class="banner-text">INTERNATIONAL STUDENT SYMPOSIUM ON <span class="txt-humanize">HUMANIZING</span> <span class="txt-tech">TECHNOLOGY</span></p>
+        <p class="banner-values">SUSTAINABLE · INCLUSIVE · ETHICAL · RESPONSIBLE</p>
         <div class="banner-line"></div>
         <div class="presenter-block">
           <span class="dept-title">DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE</span>
-          <span class="ampersand">&amp;</span>
-          <span class="assoc-title">SKYLARK ASSOCIATION</span>
+          <div class="skylark-brand-row">
+            <span class="skylark-word">SKYLARK</span>
+            <span class="skylark-icon" aria-hidden="true">🦅</span>
+            <span class="assoc-word">ASSOCIATION</span>
+          </div>
           <span class="presents-label">presents</span>
         </div>
       </div>
@@ -765,7 +697,7 @@
             <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
             <path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
-          AI for Sustainability
+          AI for Sustainability · Humanizing Technology
         </p>
         <div class="subtitle-line" aria-hidden="true"></div>
       </div>
@@ -775,19 +707,19 @@
       </p>
 
       <div class="hero-dates" role="group" aria-label="Event dates">
-        <div class="date-badge">
-          <div class="date-badge-icon">🖥️</div>
+        <div class="date-badge date-badge-d1">
+          <div class="date-badge-icon">🌐</div>
           <div class="date-badge-info">
-            <strong>14 October 2026</strong>
-            <span>Day 1 · Online</span>
+            <strong>DAY 01 : 14 OCTOBER 2026</strong>
+            <span class="date-mode-pill mode-online">FULLY ONLINE</span>
           </div>
         </div>
-        <div class="date-divider" aria-hidden="true">→</div>
-        <div class="date-badge">
+        <div class="date-divider" aria-hidden="true">✦</div>
+        <div class="date-badge date-badge-d2">
           <div class="date-badge-icon">📍</div>
           <div class="date-badge-info">
-            <strong>15 October 2026</strong>
-            <span>Day 2 · In-Person</span>
+            <strong>DAY 02 : 15 OCTOBER 2026</strong>
+            <span class="date-mode-pill mode-offline">IN PERSON, CAMPUS</span>
           </div>
         </div>
       </div>
@@ -826,6 +758,12 @@
           </span>
           <span class="btn-glow-ring"></span>
         </a>
+        <a href="#brochure" class="btn btn-outline-brochure btn-magnetic" id="hero-brochure-btn" aria-label="View Official Brochure">
+          <span class="btn-inner">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Brochure
+          </span>
+        </a>
         <a href="#about" class="btn btn-outline btn-magnetic" aria-label="Learn more">
           <span class="btn-inner">Explore ↓</span>
         </a>
@@ -841,7 +779,7 @@
 
   <!-- WAVE DIVIDER -->
   <div class="wave-divider wave-hero-about" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#f0fdf4"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,0 C360,80 1080,0 1440,60 L1440,80 L0,80 Z" fill="#050a1d"/></svg>
   </div>
 
   <!-- ─── ABOUT ─── -->
@@ -900,9 +838,170 @@
     </div>
   </section>
 
-  <!-- WAVE DIVIDER -->
-  <div class="wave-divider wave-about-events" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#ffffff"/></svg>
+  <!-- WAVE DIVIDER (About -> Brochure) -->
+  <div class="wave-divider wave-about-brochure" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#070e24"/></svg>
+  </div>
+
+  <!-- ─── BROCHURE ─── -->
+  <section id="brochure" class="section brochure-section" aria-labelledby="brochure-title">
+    <div class="brochure-bg-grid" aria-hidden="true"></div>
+    <div class="brochure-orb brochure-orb-1" aria-hidden="true"></div>
+    <div class="brochure-orb brochure-orb-2" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge brochure-badge reveal-item">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Official Announcement
+        </span>
+        <h2 class="section-title scramble-title reveal-item" id="brochure-title">
+          Symposium <span class="text-grad">Brochure</span>
+        </h2>
+        <p class="section-desc reveal-item" style="color:rgba(255,255,255,.7)">
+          Official circular detailing events, cash prizes, schedule, team guidelines, and coordinator contacts
+        </p>
+      </div>
+
+      <div class="brochure-layout">
+        <!-- Brochure Preview Interactive Card -->
+        <div class="brochure-card glass-card reveal-item" id="brochure-interactive-card">
+          <div class="brochure-card-header">
+            <div class="brochure-terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="brochure-card-title">ARTIWHIZ'26 // OFFICIAL BROCHURE</div>
+            <span class="brochure-badge-pill">14–15 OCT 2026</span>
+          </div>
+
+          <div class="brochure-img-container" id="brochure-preview-trigger" title="Click to view full brochure in high resolution" role="button" tabindex="0" aria-label="Expand brochure fullscreen">
+            <img src="artiwhiz26-brochure.jpg" alt="ArtiWhiz'26 International Symposium Official Brochure" class="brochure-img" id="brochure-img-elem" loading="lazy" />
+            <div class="brochure-scanline" aria-hidden="true"></div>
+            <div class="brochure-overlay">
+              <div class="overlay-content">
+                <div class="overlay-icon-wrap">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                </div>
+                <span class="overlay-text">Click to View High-Resolution Fullscreen</span>
+                <span class="overlay-sub">HD Zoom &amp; Pan Available</span>
+              </div>
+            </div>
+            <div class="brochure-corner-brackets" aria-hidden="true">
+              <span class="cb cb-tl"></span>
+              <span class="cb cb-tr"></span>
+              <span class="cb cb-bl"></span>
+              <span class="cb cb-br"></span>
+            </div>
+          </div>
+
+          <div class="brochure-card-footer">
+            <div class="brochure-btn-group">
+              <a href="artiwhiz26-brochure.jpg" download="ArtiWhiz26-Official-Brochure.jpg" class="btn btn-primary btn-glow btn-magnetic" id="btn-brochure-download" aria-label="Download Official Brochure">
+                <span class="btn-inner">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download HD Brochure
+                </span>
+                <span class="btn-glow-ring"></span>
+              </a>
+
+              <button type="button" class="btn btn-outline-cyan btn-magnetic" id="btn-brochure-expand" aria-label="Open Fullscreen Brochure">
+                <span class="btn-inner">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                  Fullscreen
+                </span>
+              </button>
+
+              <button type="button" class="btn btn-outline-purple btn-magnetic" id="btn-brochure-share" aria-label="Share Brochure">
+                <span class="btn-inner">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                  Share
+                </span>
+              </button>
+            </div>
+            <div class="brochure-status-row">
+              <span class="b-status-item"><span class="b-dot-live"></span> Verified Official Circular</span>
+              <span class="b-status-item">📄 High-Res 473 KB JPG</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brochure Highlights Panel -->
+        <div class="brochure-info-panel glass-card reveal-item">
+          <div class="info-panel-header">
+            <span class="panel-eyebrow">KEY HIGHLIGHTS</span>
+            <h3 class="panel-title">Everything In The Circular</h3>
+            <p class="panel-subtitle">Official summary of events, rules, awards, and eligibility</p>
+          </div>
+
+          <div class="highlights-grid">
+            <div class="hl-item">
+              <div class="hl-icon hl-icon-calendar">📅</div>
+              <div class="hl-content">
+                <h4>Event Schedule &amp; Format</h4>
+                <p><strong>Day 1 (14 Oct):</strong> Fully Online via Zoom / Unstop<br/><strong>Day 2 (15 Oct):</strong> In-Person on Campus, E.G.S. Pillay</p>
+              </div>
+            </div>
+
+            <div class="hl-item">
+              <div class="hl-icon hl-icon-team">👥</div>
+              <div class="hl-content">
+                <h4>Team Composition</h4>
+                <p><strong>2 – 3 Members</strong> per team across all technical &amp; non-technical events</p>
+              </div>
+            </div>
+
+            <div class="hl-item">
+              <div class="hl-icon hl-icon-trophy">🏆</div>
+              <div class="hl-content">
+                <h4>Cash Prizes (For Each Tech Event)</h4>
+                <p><strong>1st:</strong> ₹5,000 &nbsp;|&nbsp; <strong>2nd:</strong> ₹3,000 &nbsp;|&nbsp; <strong>3rd:</strong> ₹1,000<br/><span class="hl-note">Total Cash Prize Pool ₹9,000+</span></p>
+              </div>
+            </div>
+
+            <div class="hl-item">
+              <div class="hl-icon hl-icon-perk">🎁</div>
+              <div class="hl-content">
+                <h4>Registration &amp; Hospitality Perks</h4>
+                <p><strong>Fee:</strong> Only ₹100 per participant<br/><strong>Perks:</strong> Food &amp; Refreshments provided + Official Certificates for all</p>
+              </div>
+            </div>
+
+            <div class="hl-item">
+              <div class="hl-icon hl-icon-events">⚡</div>
+              <div class="hl-content">
+                <h4>Full Event Lineup</h4>
+                <p><strong>Online:</strong> ARVEXIS (Case Study) &amp; Pre-Symposium Webinar<br/><strong>Offline:</strong> ARVENA (Article), ARCOVA (Hackathon) &amp; ARISE (Non-Tech)</p>
+              </div>
+            </div>
+
+            <div class="hl-item">
+              <div class="hl-icon hl-icon-help">📞</div>
+              <div class="hl-content">
+                <h4>Direct Helpdesk &amp; Registration</h4>
+                <p><strong>M. Akash (President):</strong> +91 90479 77671<br/><strong>S. Deepika (Vice President):</strong> +91 96779 25593<br/><strong>Email:</strong> artiwhiz@egspec.org</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-cta-row">
+            <button type="button" class="btn btn-primary btn-glow btn-magnetic" id="btn-brochure-register-now" aria-label="Register Now from Brochure">
+              <span class="btn-inner">Register Now →</span>
+              <span class="btn-glow-ring"></span>
+            </button>
+            <a href="artiwhiz26-brochure.jpg" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-magnetic" aria-label="Open brochure in new tab">
+              <span class="btn-inner">Open in New Tab ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE DIVIDER (Brochure -> Online Events) -->
+  <div class="wave-divider wave-brochure-events" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,30 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#040817"/></svg>
   </div>
 
   <!-- ─── ONLINE EVENTS ─── -->
@@ -929,7 +1028,7 @@
 
     <div class="container">
       <div class="section-header">
-        <span class="section-badge online-badge reveal-item">🌐 Day 1 — 14 October 2026</span>
+        <span class="section-badge online-badge reveal-item">🌐 ONLINE - EVENTS &gt;&gt;</span>
         <h2 class="section-title scramble-title reveal-item" id="online-title">Online <span class="text-grad">Events</span></h2>
         <p class="section-desc reveal-item">Join from anywhere in the world</p>
       </div>
@@ -939,7 +1038,7 @@
 
   <!-- WAVE DIVIDER -->
   <div class="wave-divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,20 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#0a1128"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,20 C360,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#060c22"/></svg>
   </div>
 
   <!-- ─── OFFLINE EVENTS ─── -->
@@ -947,7 +1046,7 @@
     <div class="offline-bg-stars" aria-hidden="true" id="stars-bg"></div>
     <div class="container">
       <div class="section-header">
-        <span class="section-badge offline-badge reveal-item">📍 Day 2 — 15 October 2026</span>
+        <span class="section-badge offline-badge reveal-item">📍 OFFLINE - EVENTS &gt;&gt;</span>
         <h2 class="section-title scramble-title reveal-item" id="offline-title" style="color:#fff">Offline <span class="text-grad">Events</span></h2>
         <p class="section-desc reveal-item" style="color:rgba(255,255,255,.6)">In-Person · E.G.S. Pillay Engineering College</p>
       </div>
@@ -966,7 +1065,7 @@
 
   <!-- WAVE DIVIDER -->
   <div class="wave-divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="#f0fdf4"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C480,80 960,0 1440,60 L1440,80 L0,80 Z" fill="#05091b"/></svg>
   </div>
 
   <!-- ─── PRIZES ─── -->
@@ -1029,7 +1128,7 @@
 
   <!-- WAVE DIVIDER -->
   <div class="wave-divider" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#ffffff"/></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#040818"/></svg>
   </div>
 
   <!-- ─── COORDINATORS ─── -->
@@ -1046,7 +1145,9 @@
         <div class="coord-row coord-row-center">
           <div class="coord-card glass-card" data-initials="SP" data-role="convener">
             <div class="coord-avatar-wrap"><div class="coord-avatar"><span>SP</span></div><div class="coord-avatar-ring"></div></div>
-            <h4>Dr. S. Palani Murugan</h4><p>Academic Director &amp; Associate Professor / AI&amp;DS</p>
+
+            <h4>Dr. S. Palani Murugan</h4><p>Academic Director, Associate Professor / AI&amp;DS</p>
+
           </div>
           <div class="coord-card glass-card" data-initials="JA" data-role="convener">
             <div class="coord-avatar-wrap"><div class="coord-avatar"><span>JA</span></div><div class="coord-avatar-ring"></div></div>
@@ -1060,7 +1161,7 @@
         <div class="coord-row">
           <div class="coord-card glass-card" data-initials="SA">
             <div class="coord-avatar-wrap"><div class="coord-avatar"><span>SA</span></div><div class="coord-avatar-ring"></div></div>
-            <h4>Mrs. S. Akilandeswari</h4><p>AHoD / AI&amp;DS</p>
+            <h4>Mrs. S. Akilandaswari</h4><p>AHoD / AI&amp;DS</p>
           </div>
           <div class="coord-card glass-card" data-initials="KR">
             <div class="coord-avatar-wrap"><div class="coord-avatar"><span>KR</span></div><div class="coord-avatar-ring"></div></div>
@@ -1075,10 +1176,12 @@
           <div class="coord-card glass-card">
             <div class="coord-avatar-wrap"><div class="coord-avatar"><span>SS</span></div><div class="coord-avatar-ring"></div></div>
             <h4>Mrs. S. Shajini</h4><p>AP / AI&amp;DS</p>
+            <a href="tel:+919486587863" class="coord-phone-badge" aria-label="Call Mrs. S. Shajini">📞 94865 87863</a>
           </div>
           <div class="coord-card glass-card">
             <div class="coord-avatar-wrap"><div class="coord-avatar"><span>NN</span></div><div class="coord-avatar-ring"></div></div>
             <h4>Mrs. N. Nivetha</h4><p>AP / AI&amp;DS</p>
+            <a href="tel:+917010016946" class="coord-phone-badge" aria-label="Call Mrs. N. Nivetha">📞 70100 16946</a>
           </div>
         </div>
       </div>
@@ -1091,12 +1194,12 @@
             <h4>A. Rasik Rahman</h4>
             <p>Web Designer</p>
           </a>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>MA</span></div><div class="coord-avatar-ring"></div></div><h4>M. Akash</h4><p>President</p></div>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>RR</span></div><div class="coord-avatar-ring"></div></div><h4>R. Rajeshwari</h4><p>Secretary</p></div>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SD</span></div><div class="coord-avatar-ring"></div></div><h4>S. Deepika</h4><p>Vice President</p></div>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>BA</span></div><div class="coord-avatar-ring"></div></div><h4>B. Anu</h4><p>Joint Secretary</p></div>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>VY</span></div><div class="coord-avatar-ring"></div></div><h4>V. Yokita</h4><p>Treasurer</p></div>
-          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SA</span></div><div class="coord-avatar-ring"></div></div><h4>S. Annamalai</h4><p>Co-Treasurer</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>MA</span></div><div class="coord-avatar-ring"></div></div><h4>M. Akash</h4><p>President (IV Year)</p><a href="tel:+919047977671" class="coord-phone-badge" aria-label="Call M. Akash">📞 90479 77671</a></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>RR</span></div><div class="coord-avatar-ring"></div></div><h4>R. Rajeshwari</h4><p>Secretary (IV Year)</p><a href="tel:+919342119818" class="coord-phone-badge" aria-label="Call R. Rajeshwari">📞 93421 19818</a></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SD</span></div><div class="coord-avatar-ring"></div></div><h4>S. Deepika</h4><p>Vice President (III Year)</p><a href="tel:+919677925593" class="coord-phone-badge" aria-label="Call S. Deepika">📞 96779 25593</a></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>BA</span></div><div class="coord-avatar-ring"></div></div><h4>B. Anu</h4><p>Joint Secretary (III Year)</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>VY</span></div><div class="coord-avatar-ring"></div></div><h4>V. Yokitha</h4><p>Treasurer (III Year)</p></div>
+          <div class="coord-card glass-card student-card"><div class="coord-avatar-wrap"><div class="coord-avatar student-av"><span>SA</span></div><div class="coord-avatar-ring"></div></div><h4>S. Annamalai</h4><p>Co-Treasurer (II Year)</p></div>
         </div>
       </div>
     </div>
@@ -1113,7 +1216,7 @@
             <svg viewBox="0 0 32 38" fill="none" width="32" height="38" aria-hidden="true">
               <path d="M16 36 C16 36 1 26 1 14 C1 4 7 1 16 1 C25 1 31 4 31 14 C31 26 16 36 16 36Z" fill="url(#flg)"/>
               <path d="M16 36 L16 7" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-              <defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22c55e"/><stop offset="100%" stop-color="#0d5c2f"/></linearGradient></defs>
+              <defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d946ef"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs>
             </svg>
             ArtiWhiz<span>'26</span>
           </div>
@@ -1132,10 +1235,12 @@
         <div class="footer-col reveal-item">
           <h3 id="contact-title">Contact Us</h3>
           <ul class="contact-list">
-            <li><span>📞</span><a href="tel:+919047977671">+91 90479 77671</a> <em>(Akash)</em></li>
-            <li><span>📞</span><a href="tel:+919342119818">+91 93421 19818</a> <em>(Rajeshwari)</em></li>
-            <li><span>📞</span><a href="tel:+919363087377">+91 93630 87377</a></li>
-            <li><span>📞</span><a href="tel:+919976888999">+91 99768 88999</a></li>
+            <li><span>📞</span><a href="tel:+919047977671">+91 90479 77671</a> <em>(M. Akash - President)</em></li>
+            <li><span>📞</span><a href="tel:+919677925593">+91 96779 25593</a> <em>(S. Deepika - Vice President)</em></li>
+            <li><span>📞</span><a href="tel:+919342119818">+91 93421 19818</a> <em>(R. Rajeshwari - Secretary)</em></li>
+            <li><span>📞</span><a href="tel:+919486587863">+91 94865 87863</a> <em>(Mrs. S. Shajini - Faculty)</em></li>
+            <li><span>📞</span><a href="tel:+917010016946">+91 70100 16946</a> <em>(Mrs. N. Nivetha - Faculty)</em></li>
+            <li><span>📞</span><a href="tel:+919363087377">+91 93630 87377</a> / <a href="tel:+919976888999">+91 99768 88999</a></li>
             <li><span>✉️</span><a href="mailto:artiwhiz@egspec.org">artiwhiz@egspec.org</a></li>
             <li><span>📍</span><span>Old Nagore Main Road, Thethi,<br/>Nagapattinam, Tamil Nadu – 611002</span></li>
           </ul>
@@ -1145,6 +1250,7 @@
           <h3>Quick Links</h3>
           <ul class="footer-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#brochure">Brochure</a></li>
             <li><a href="#online-events">Online Events</a></li>
             <li><a href="#offline-events">Offline Events</a></li>
             <li><a href="#prizes">Prizes &amp; Perks</a></li>
@@ -1154,7 +1260,7 @@
         </div>
       </div>
 
-      
+
 
       <div class="footer-bottom">
         <p>© 2026 ArtiWhiz · E.G.S. Pillay Engineering College · All rights reserved</p>
@@ -1200,6 +1306,43 @@
           </div>
           <span class="opt-arrow">→</span>
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── BROCHURE LIGHTBOX MODAL ─── -->
+  <div id="brochure-modal" class="modal-backdrop brochure-modal-backdrop" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Brochure viewer">
+    <div class="modal-overlay" id="brochure-modal-overlay"></div>
+    <div class="brochure-modal-container">
+      <div class="brochure-modal-toolbar">
+        <div class="brochure-modal-info">
+          <span class="b-badge">ARTIWHIZ'26</span>
+          <span class="b-title">Official Symposium Brochure</span>
+        </div>
+        <div class="brochure-modal-tools">
+          <button type="button" id="b-zoom-out" class="b-tool-btn" title="Zoom Out (-)" aria-label="Zoom Out">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" id="b-zoom-reset" class="b-tool-btn b-tool-txt" title="Reset Zoom" aria-label="Reset Zoom">100%</button>
+          <button type="button" id="b-zoom-in" class="b-tool-btn" title="Zoom In (+)" aria-label="Zoom In">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <a href="artiwhiz26-brochure.jpg" download="ArtiWhiz26-Official-Brochure.jpg" class="b-tool-btn b-tool-download" title="Download Brochure" aria-label="Download Brochure">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span class="btn-d-txt">Download</span>
+          </a>
+          <button type="button" id="brochure-modal-close" class="b-tool-btn b-tool-close" title="Close (Esc)" aria-label="Close modal">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="brochure-modal-viewport" id="brochure-viewport">
+        <div class="brochure-img-transform-wrap" id="brochure-transform-wrap">
+          <img src="artiwhiz26-brochure.jpg" alt="ArtiWhiz'26 Official Brochure Fullscreen" id="brochure-modal-img" draggable="false" />
+        </div>
+      </div>
+      <div class="brochure-modal-footer">
+        <span>💡 Hint: Use mouse wheel, double click, or the buttons above to zoom. Drag to pan.</span>
       </div>
     </div>
   </div>
