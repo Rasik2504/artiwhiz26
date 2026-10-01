@@ -588,7 +588,10 @@ function startTypewriter() {
    FLIP COUNTDOWN
 ═══════════════════════════════════════════ */
 function initCountdown() {
-  const TARGET = new Date("2026-10-14T00:00:00+05:30");
+  // Target earliest symposium event: Day 2 (10 Oct 2026), followed by Day 1 (14 Oct 2026)
+  const D2_DATE = new Date("2026-10-10T00:00:00+05:30");
+  const D1_DATE = new Date("2026-10-14T00:00:00+05:30");
+  const TARGET = Date.now() < D2_DATE ? D2_DATE : D1_DATE;
 
   // Simple element refs — one span per unit
   const els = {
@@ -1132,7 +1135,7 @@ function initBrochureModal() {
   shareBtn?.addEventListener("click", async () => {
     const shareData = {
       title: "ArtiWhiz '26 Official Brochure",
-      text: "Explore the official symposium brochure for ArtiWhiz'26 (14–15 October 2026) at E.G.S. Pillay Engineering College. ₹9K+ cash prizes, Hackathon, Case Study & more!",
+      text: "Explore the official symposium brochure for ArtiWhiz'26 (Day 1: 14 Oct & Day 2: 10 Oct 2026) at E.G.S. Pillay Engineering College. ₹9K+ cash prizes, Hackathon, Case Study & more!",
       url: window.location.origin + window.location.pathname + "#brochure",
     };
     if (navigator.share) {

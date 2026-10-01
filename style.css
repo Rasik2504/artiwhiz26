@@ -1072,14 +1072,15 @@ body.cursor-hover #cursor-ring{width:50px;height:50px;border-color:rgba(236,72,1
 }
 .cal-day {
   color: #0f172a;
-  font-size: 0.95rem;
+  font-size: 0.72rem;
   font-weight: 900;
   font-family: var(--font-head);
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 .stat-num{
   font-family:var(--font-head);font-size:2.2rem;font-weight:900;
